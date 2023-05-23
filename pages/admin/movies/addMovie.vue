@@ -1,9 +1,7 @@
 <script setup>
 import { ref , reactive} from "vue";
-import UploadMultiImage from '../../components/UploadMultiImage.vue'
 
 let imageNumbers = ref([])
-
 
 
 //fetch directors from data base 
@@ -174,7 +172,7 @@ const handleAddMovie = ()=>{
                         </select>
                     </div>
                     <!-- Uload Images -->
-                    <UploadMultiImage></UploadMultiImage>
+                    <ImagesMultiImage></ImagesMultiImage>
                      <!-- Actors -->
                      <div class="flex justify-between">
                         <div class=" text-primary9">

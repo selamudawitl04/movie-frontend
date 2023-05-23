@@ -44,7 +44,7 @@
                                         <li class="streaming">
                                             <h6>Rate It</h6>
                                         </li>
-                                        <router-link class="text-white   font-bold rounded-full border-4 border-solid border-yellow-bright py-2 px-6  md:px-10 text-center hover:bg-yellow-bright hover:text-gray-dark  "  to="/login">Buy ticket</router-link>
+                                        <router-link class="text-white   font-bold rounded-full border-4 border-solid border-yellow-bright py-2 px-6  md:px-10 text-center hover:bg-yellow-bright hover:text-gray-dark  "  to="/auth/login">Buy ticket</router-link>
                                     </ul>
                                 </div>
                             </div>

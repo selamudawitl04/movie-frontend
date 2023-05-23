@@ -1,11 +1,11 @@
 <script setup>
-// import TheHeader from "../../layout/TheHeader.vue";
-// import TheFooter from "../../layout/TheFooter.vue";
 
+definePageMeta({
+  layout: "movies",
+});
 </script>
 <template>
     <div class="app">
-        <LayoutHeader></LayoutHeader>
       <section v-if="true" id="header-container" style="" class=" py-60 md:py-80 bg-no-repeat bg-center  bg-cover lg:bg-right  bg-" >
            <div class="">
                <div class="">
@@ -30,7 +30,7 @@
                                </ul>
                            </div>
                            <div  class="py-10">    
-                                <router-link class="text-white  bg-primary2 font-bold rounded-full border-4 border-solid border-yellow-bright py-4  px-8 text-center hover:bg-yellow-bright hover:text-gray-dark  "  to="/login">Register Now</router-link>
+                                <router-link class="text-white  bg-primary2 font-bold rounded-full border-4 border-solid border-yellow-bright py-4  px-8 text-center hover:bg-yellow-bright hover:text-gray-dark  "  to="/auth/signup">Register Now</router-link>
                             </div>
                            <!-- <a href="https://www.youtube.com/watch?v=R2gbPxeNk2E" class="banner-btn btn popup-video wow fadeInUp" data-wow-delay=".8s" data-wow-duration="1.8s" style="visibility: visible; animation-duration: 1.8s; animation-delay: 0.8s; animation-name: fadeInUp;"><i class="fas fa-play"></i> Watch Now</a> -->
                        </div>
@@ -245,12 +245,9 @@
                 </div> 
             </section>
        </div>
-       <LayoutFooter></LayoutFooter>
   </template>
 
   <style scoped>
-  
-
   
   #header-container{
       background-image: url(../../assets/img/header-bg.jpg);

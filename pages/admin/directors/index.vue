@@ -1,6 +1,9 @@
 <script setup>
 import { ref } from "vue";
-import SubHeader from "../../components/layout/SubHeader.vue";
+
+definePageMeta({
+  layout: "adminpanel",
+});
 
 
 const name = ref()
@@ -9,8 +12,7 @@ name.value =[1,2,3,4,5,6,7,8]
 
 <template>
     <div class="">
-        <sub-header name="Directors"></sub-header>
-
+        <LayoutSubHeader name="Directors"></LayoutSubHeader>
         <table class=" bg-white">
            <tr>
                 <th class=" uppercase text-primary8">First Name</th>
@@ -41,7 +43,6 @@ name.value =[1,2,3,4,5,6,7,8]
     </div>
 
 </template>
-
 <style scoped>
 table{
     border-radius: 12px;
