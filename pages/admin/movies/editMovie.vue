@@ -1,6 +1,8 @@
 <script setup>
 import { ref , reactive} from "vue";
-import UploadMultiImage from '../../components/UploadMultiImage.vue'
+definePageMeta({
+  layout: "adminpanel",
+});
 
 let imageNumbers = ref([])
 

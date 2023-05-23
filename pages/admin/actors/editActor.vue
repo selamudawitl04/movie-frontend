@@ -1,6 +1,9 @@
 <script setup>
 
 import { ref , reactive} from "vue";
+definePageMeta({
+  layout: "adminpanel",
+});
 
 const actor = ref({
     first_name: 'Selamu',
@@ -9,19 +12,6 @@ const actor = ref({
 
 
 
-const selecteImage = ()=>{
-    const input = document.getElementById('image-input')
-    input.click()
-}
-
-const uploadImage = (event)=>{
-    const imagePreview = document.getElementById('image-preview');
-    const input = document.getElementById('image-input')
-    const file = event.target.files[0];
-    console.log(file)
-    const imageUrl = URL.createObjectURL(file);
-    imagePreview.src = imageUrl;
-}
 
 const handleEditActor = ()=>{
     //1. if image is changed  upload the image
@@ -36,15 +26,7 @@ const handleEditActor = ()=>{
         <form action="" @submit.prevent="handleEditActor"> 
             <h1 class="text-center text-3xl font-bold text-primary9 py-10 uppercase">Edit Actor</h1>
             <div class=" flex items-center justify-center">
-                <div>
-                <!-- Left Side -->
-                    <label @click="selecteImage" for="image" class=" cursor-pointer my-0">
-                        <!-- The image url is changed -->
-                        <img id="image-preview" class=" w-40  border-4 hover:border-yellow-bright border-primary9" src="../../assets/img/User/user-13.jpg" alt="">
-                    </label>
-                    <input id="image-input" @change="uploadImage" class=" opacity-0 h-0 p-0 m-0" type="file" name="image" >
-                    <h2 @click="selecteImage" class="ml-5 my-0 cursor-pointer uppercase text-primary9 font-semibold">Choose Image</h2>
-                </div>
+               <ImagesUpload></ImagesUpload>
                 <div class=" flex flex-col space-y-6">
                     <div>
                         <input v-model="actor.first_name" class="  py-1 " type="text" placeholder="First Name" name="" id="">
@@ -54,11 +36,7 @@ const handleEditActor = ()=>{
                     </div>
                     <button class=" font-bold text-white rounded-sm bg-yellow-bright w-full p-2">Submit</button>
                 </div>
-
             </div>
-
-            
-
             <div>
                 <!-- button -->
             </div>

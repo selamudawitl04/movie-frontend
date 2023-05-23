@@ -24,13 +24,13 @@ name.value =[1,2,3,4,5,6,7,8]
            </tr>
            <tr v-for="val in name" :key="val">
                 <td class=" text-gray-dark font-bold">
-                    <img class="w-8  rounded-md h-8 inline" src="../../assets/img/ucm_poster01.jpg" alt="afsgdh">
+                    <img class="w-8  rounded-md h-8 inline" src="../../../assets/img/ucm_poster01.jpg" alt="afsgdh">
                     Scolfled
                 </td>
                 <td class=" text-primary9 font-bold">Millner</td>
                 <td class=" text-yellow-bright font-bold text-center">11</td>
                 <td class=" text-right" >
-                    <router-link to="/admin/actors/12/editActor" class=" p-0.5 ml-2.5 text-white font-bold bg-yellow-bright rounded-md px-3">Edit</router-link>
+                    <NuxtLink to="/admin/actors/editActor" class=" p-0.5 ml-2.5 text-white font-bold bg-yellow-bright rounded-md px-3">Edit</NuxtLink>
 
                     <!-- <button class=" ml-2.5 text-white font-bold bg-yellow-bright rounded-md px-3">Edit</button> -->
                 </td>

@@ -1,5 +1,8 @@
 <script setup>
 import { ref , reactive} from "vue";
+definePageMeta({
+  layout: "adminpanel",
+});
 
 let imageNumbers = ref([])
 
@@ -172,7 +175,7 @@ const handleAddMovie = ()=>{
                         </select>
                     </div>
                     <!-- Uload Images -->
-                    <ImagesMultiImage></ImagesMultiImage>
+                    <ImagesMultiUpload/>
                      <!-- Actors -->
                      <div class="flex justify-between">
                         <div class=" text-primary9">
@@ -187,8 +190,6 @@ const handleAddMovie = ()=>{
                             </transition-group>
 
                             </div>
-
-                            
                         </div>
 
                         <div  class=" flex flex-col text-left space-y-4">

@@ -24,14 +24,14 @@ name.value =[1,2,3,4,5,6,7,8]
            </tr>
            <tr v-for="val in name" :key="val">
                 <td class=" text-gray-dark font-bold">
-                    <img class="w-8  rounded-md h-8 inline" src="../../assets/img/ucm_poster01.jpg" alt="afsgdh">
+                    <img class="w-8  rounded-md h-8 inline" src="../../../assets/img/ucm_poster01.jpg" alt="afsgdh">
                     Shweutinger
                 </td>
                 <td class=" text-primary9 font-bold">James</td>
                 <td class=" text-yellow-bright font-bold">12</td>
                 <td class=" text-right" >
                     <!-- <button class=" ml-2.5 text-white font-bold bg-yellow-bright rounded-md px-3">Edit</button> -->
-                    <router-link to="/admin/directors/12/editDirector" class=" py-1 ml-2.5 text-white font-bold bg-yellow-bright rounded-md px-3">Edit</router-link>
+                    <router-link to="/admin/directors/editDirector" class=" py-1 ml-2.5 text-white font-bold bg-yellow-bright rounded-md px-3">Edit</router-link>
                 </td>
                 <td class=" text-right" >
 

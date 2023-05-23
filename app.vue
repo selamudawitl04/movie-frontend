@@ -1,5 +1,4 @@
 <script setup>
-// const counterStore = useCounterStore();
 </script>
 
 <template>
