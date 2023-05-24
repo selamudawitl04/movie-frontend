@@ -3,23 +3,38 @@
 // 1. set base64Images
 import { ref , reactive} from "vue";
 
+
+
 const base64Images = ref([]);
 const displayImageInput = ref(true)
 let imagesAreSelected = ref(false)
-let imageForTumb = ref()
+const setImageToMovie = inject('setImages')
+const setCoverImage = inject('setCoverImage')
+
+const numberOfImages = ()=> base64Images.value.length
+
+watch(numberOfImages, (newValue)=>{
+    if(newValue > 0){
+        setImageToMovie(base64Images.value)
+    }
+})
+
 const setImages = async (event)=>{
     const imageContainer = document.getElementById('image-container');
     const files = event.target.files
     for(let i = 0 ; i < files.length; i++){
         // change images to base64
+
         setTimeout(() => {
             const reader = new FileReader()
             reader.readAsDataURL(files[i])
-            console.log(files[i])
+            // console.log(files[i])
             reader.onload = () => {
                 base64Images.value.push(reader.result)
             }
         }, 20);
+     
+        // How to remove the tumb from base
         //display selected image by creating temporary object url  
         const img = document.createElement('img');
         img.src = URL.createObjectURL(files[i]);
@@ -36,7 +51,7 @@ const setImages = async (event)=>{
 // a function to choose cover image
 function chooseTumb(event) {
     const imageElement = event.target
-    imageForTumb.value = imageElement.id;
+    setCoverImage(imageElement.id)
     imageElement.parentElement.childNodes.forEach((node,index)=>{
         if(index > 0)
             node.style.border = 'none'

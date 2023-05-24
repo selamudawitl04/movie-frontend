@@ -15,23 +15,24 @@ export default defineNuxtConfig({
         },
         
       ],
-      // "@nuxtjs/apollo"
+      "@nuxtjs/apollo"
 
     ],
-    // apollo: {
-    //   authType: "Bearer",
-    //   authHeader: "Authorization",
-    //   tokenStorage: "cookie",
-    //   clients: {
-    //     default: {
-    //       tokenName: "github-token",
-    //       httpEndpoint: "https://vue-shopping.hasura.app/v1/graphql",
-    //       headers: {
-    //         "x-hasura-admin-secret": "ym6arlrrdMol6MfV156smTMo8L72B6QBLxiyZtWUZl0w0YxctdVN9YTppWkYB5Gn"
-    //       },
-    //     },
-    //   },
-    // },
+    apollo: {
+      autoImports: true,
+      authType: 'Bearer',
+      authHeader: 'Authorization',
+      tokenStorage: 'cookie',
+      proxyCookies: true,
+      clients: {
+        default: {
+          httpEndpoint: "https://vue-shopping.hasura.app/v1/graphql"
+        },
+        client: './apollo/client.js' ,
+
+      },
+  
+    },
     
     imports: {
       dirs: ['stores'],

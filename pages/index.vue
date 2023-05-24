@@ -1,5 +1,8 @@
 <script setup>
-// function to fetch date from store
+// fetch movie from store
+import {useMovieStore} from '../stores/modules/movies'
+const movieStore = useMovieStore()
+const movies = movieStore.getMovies
 
 definePageMeta({
   layout: "movies",
@@ -9,13 +12,11 @@ definePageMeta({
     <div class="app">
         <!-- Body Header -->
         <MoviesHeader/>
-
         <!-- Movies Body -->
         <section v-if="true" id="body-container"  class=" z-10  relative  py-40   bg-no-repeat bg-center  bg-cover ">
         <!-- Back ground Image -->
             <div  id="inner-bg" class=" z-20 opacity-95  bg-primary3 absolute top-0 left-0 right-0 bg-no-repeat bg-center  bg-cover  h-full  w-full" >
             </div>
-
             <!-- Search Movie by director and Header -->
             <div class=" px-4 flex flex-col justify-center items-center z-50  lg:flex-row lg:justify-between relative container mx-auto">
                 <div>
@@ -28,20 +29,19 @@ definePageMeta({
 
             <!-- Movie List Container -->
             <div class="container mx-auto z-50 px-4  relative">
-                <!-- <MoviesList :movies="movies"/> -->
+                <MoviesList :movies="movies"/>
+                <MoviesList :movies="movies"/>
             </div> 
         </section>
-       </div>
-  </template>
+    </div>
+</template>
 
   <style scoped>
   
   #body-container{
       background-image: url(../assets/img/ucm_bg.jpg);
   }
-
   #inner-bg{
     background-image: url(../assets/img/ucm_bg_shape.png);
-
   }
   </style>

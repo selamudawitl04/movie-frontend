@@ -1,7 +1,5 @@
 <!-- Movie List -->
-
 <script setup>
-
 definePageMeta({
   layout: "movies",
 });
@@ -15,8 +13,8 @@ const props = defineProps({
 </script>
 <template>
     <div class=" grid grid-cols-1 justify-center md:grid gap-6   md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
-        <MoviesItem  v-for="movie in movies " :key="movie.id" :movie="movie"/>
+        <MoviesItem  v-for="(movie, index) in movies " :key="movie.id" :index="index" :movie="movie"/>
     </div>
-  </template>
+</template>
 
   
